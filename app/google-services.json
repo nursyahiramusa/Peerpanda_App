@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1063320904667",
+    "firebase_url": "https://peerpanda-01.firebaseio.com",
+    "project_id": "peerpanda-01",
+    "storage_bucket": "peerpanda-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063320904667:android:3560a11bd21f052754bdfe",
+        "android_client_info": {
+          "package_name": "com.example.peerpanda_app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063320904667-c0c3c07s3lf0bel8tnvq6kki2l460ulf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.peerpanda_app1",
+            "certificate_hash": "de7dc6bbcb254b4e5bc55a5bb3846ff2e87101d0"
+          }
+        },
+        {
+          "client_id": "1063320904667-vguu5bn9ju7a9g6itairb30u5nf2hf49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5SBkrta3yWZ2-MkeTWtV2L4JeirguXBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063320904667-vguu5bn9ju7a9g6itairb30u5nf2hf49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

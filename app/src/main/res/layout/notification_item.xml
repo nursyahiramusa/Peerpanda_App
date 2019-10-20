@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    app:cardElevation="4dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="5dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardBackgroundColor="@color/white"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="160dp"
+        android:backgroundTint="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tutor_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/bell" />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/courseTeach"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Course Teach "
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:layout_toRightOf="@id/tutor_image"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:id="@+id/tutor_name"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:text="Name of Tutor"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_toRightOf="@id/tutor_image"
+            android:layout_below="@+id/courseTeach"
+            />
+        <TextView
+            android:id="@+id/datetime"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:text="Date and Time"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_toRightOf="@id/tutor_image"
+            android:layout_below="@+id/tutor_name"
+            />
+        <TextView
+            android:id="@+id/location"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:text="Location"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:layout_toRightOf="@id/tutor_image"
+            android:layout_below="@+id/datetime"
+            />
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_rectangle_yello"
+            android:text="Cancel"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/location"/>
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

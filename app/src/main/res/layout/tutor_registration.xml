@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/login_bg5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical"
+        android:layout_margin="50dp"
+        android:id="@+id/logo"
+        >
+
+        <ImageView
+
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:src="@drawable/peerpandalogo"
+            />
+        <TextView
+            android:id="@+id/tv_tutor_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
+            android:text="Tutor Registration"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+
+
+        <EditText
+            android:id="@+id/tutor_name"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Student Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_person"
+
+            />
+
+        <EditText
+            android:id="@+id/tutor_stuid"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="1dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Student ID"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_id"
+            />
+        <EditText
+            android:id="@+id/tutor_courseTeach"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Course Code Teach"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_course"
+            />
+        <EditText
+            android:id="@+id/tutor_courseName"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="1dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Course Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_course"
+            />
+
+        <EditText
+            android:id="@+id/tutor_sem"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Current Semester"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_sem"
+            android:outlineSpotShadowColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/tutor_campus"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="1dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Campus"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_campus"
+            />
+
+        <EditText
+            android:id="@+id/tutor_gender"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Gender"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_gen"
+            android:outlineSpotShadowColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/tutor_phoneno"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="1dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Phone No."
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_phone"
+            />
+
+        <EditText
+            android:id="@+id/tutor_price"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_rectangle_white"
+            android:hint="  Payment per Hour"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:inputType="numberDecimal"
+            android:alpha="1"
+            android:drawableLeft="@drawable/ic_payment"
+            android:outlineSpotShadowColor="@color/black"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="3dp">
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="135dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="fill_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_rectangle_blue"
+            android:text="Submit"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

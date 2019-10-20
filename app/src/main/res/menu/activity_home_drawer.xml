@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_Notification"
+            android:icon="@drawable/ic_notification"
+            android:title="Notification" />
+        <item
+            android:id="@+id/nav_Profile"
+            android:icon="@drawable/ic_profile2"
+            android:title="Be Tutor" />
+        <item
+            android:id="@+id/nav_Booked"
+            android:icon="@drawable/ic_booked"
+            android:title="Booked" />
+
+        <item
+            android:id="@+id/nav_Exit"
+            android:icon="@drawable/ic_exit"
+            android:title="Log out" />
+    </group>
+
+</menu>

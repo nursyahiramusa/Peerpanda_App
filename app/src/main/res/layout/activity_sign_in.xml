@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignIn"
+    android:background="@drawable/login_bg5">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_margin="50dp"
+        android:id="@+id/logo"
+        >
+
+        <ImageView
+
+            android:layout_width="202dp"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:src="@drawable/peerpandalogo"
+            />
+
+    </LinearLayout>
+
+    <EditText
+
+        android:id="@+id/edtStuID"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_above="@id/logo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="331dp"
+        android:background="@drawable/button_rectangle_white"
+        android:drawableLeft="@drawable/ic_person"
+        android:ems="10"
+        android:hint="  Student ID"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:alpha="0.8"
+        app:met_baseColor="@android:color/black"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="10"
+        app:met_primaryColor="@android:color/black"
+        app:met_singleLineEllipsis="true"
+        android:text="2017175569"/>
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_above="@id/edtStuID"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="284dp"
+        android:background="@drawable/button_rectangle_white"
+        android:drawableLeft="@drawable/ic_key"
+        android:ems="10"
+        android:hint="  Password"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:alpha="0.8"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="20"
+        app:met_primaryColor="@android:color/black"
+        app:met_singleLineEllipsis="true"
+        android:text="1234"/>
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="140dp"
+        android:layout_above="@id/edtPass">
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="135dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="fill_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_rectangle_yello"
+            android:text="Sign In" />
+
+    </LinearLayout>
+
+</RelativeLayout>

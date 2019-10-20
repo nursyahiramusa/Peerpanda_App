@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:background="@drawable/bg_all1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileDetail"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--tools:context=".ProfileFragment"
+    tools:showIn="@layout/fragment_profile" -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_margin="10dp"
+            style="@style/headerText"
+            android:text="User Profile"
+            android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:id="@+id/nameImageView"
+                android:src="@drawable/ic_name"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Student Name"
+                android:layout_toRightOf="@id/nameImageView"
+                style="@style/profileDetailsTextMain" />
+
+            <TextView
+                android:id="@+id/Name"
+                android:text="sherry"
+                android:layout_toRightOf="@id/nameImageView"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout">
+
+            <ImageView
+                android:id="@+id/imgStuID"
+                android:src="@drawable/ic_id"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Student ID"
+                android:layout_toRightOf="@id/imgStuID"
+                style="@style/profileDetailsTextMain"/>
+
+            <TextView
+                android:id="@+id/StuID"
+                android:text="2017175569"
+                android:layout_toRightOf="@id/imgStuID"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:id="@+id/imgCourse"
+                android:src="@drawable/ic_course"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Course"
+                android:layout_toRightOf="@id/imgCourse"
+                style="@style/profileDetailsTextMain" />
+
+            <TextView
+                android:id="@+id/Course"
+                android:text="CS251"
+                android:layout_toRightOf="@id/imgCourse"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:id="@+id/imgSem"
+
+                android:src="@drawable/ic_sem"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Current Semester"
+                android:layout_toRightOf="@id/imgSem"
+                style="@style/profileDetailsTextMain" />
+
+            <TextView
+                android:id="@+id/Sem"
+                android:text="6"
+                android:layout_toRightOf="@id/imgSem"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout">
+            <ImageView
+                android:id="@+id/imgGen"
+
+                android:src="@drawable/ic_gen"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Gender"
+                android:layout_toRightOf="@id/imgGen"
+                style="@style/profileDetailsTextMain" />
+
+            <TextView
+                android:id="@+id/Gen"
+                android:text="Female"
+                android:layout_toRightOf="@id/imgGen"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            style="@style/profileDetailsLayout"
+            android:layout_gravity="center|bottom|end">
+            <Button
+
+                android:id="@+id/btnTutorReq"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/button_rectangle_blue"
+                android:text="Request to be Tutor"
+                android:textSize="12sp"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

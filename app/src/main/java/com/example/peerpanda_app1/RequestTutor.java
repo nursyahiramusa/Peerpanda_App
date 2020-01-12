@@ -1,7 +1,9 @@
 package com.example.peerpanda_app1;
 
+import android.animation.PropertyValuesHolder;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class RequestTutor extends AppCompatActivity{
 
-    private EditText tutor_name, tutor_stuid, tutor_courseTeach, tutor_CourseGrade, tutor_SemTaken ;
+    public EditText name, campus, course, sem, gender, phoneno, courseTeach, courseGrade, coursename, price, tutorID ;
     private Button btnSubmit;
 
     @Override
@@ -27,22 +29,25 @@ public class RequestTutor extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.request_tutor);
 
-        //link to Home by req button
-        btnSubmit = findViewById(R.id.btnSubmit);
-        btnSubmit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent Home = new Intent(RequestTutor.this, Home.class);
-                startActivity(Home);
-            }
-        });
+        name = (EditText)findViewById(R.id.name);
+        campus = (EditText)findViewById(R.id.campus);
+        course = (EditText)findViewById(R.id.course);
+        sem = (EditText)findViewById(R.id.sem);
+        gender = (EditText)findViewById(R.id.gender);
+        phoneno = (EditText)findViewById(R.id.phoneno);
+        courseTeach = (EditText)findViewById(R.id.courseTch);
+        courseGrade = (EditText)findViewById(R.id.courseGrade);
+        coursename = (EditText)findViewById(R.id.coursename);
+        price = (EditText)findViewById(R.id.price);
+        //tutorID = (EditText)findViewById(R.id.price);
 
-
-        tutor_name = (EditText)findViewById(R.id.tutor_name);
-        tutor_stuid = (EditText)findViewById(R.id.tutor_stuid);
-        tutor_courseTeach = (EditText)findViewById(R.id.tutor_courseTeach);
-        tutor_CourseGrade = (EditText)findViewById(R.id.tutor_CourseGrade);
-        tutor_SemTaken = (EditText)findViewById(R.id.tutor_SemTaken);
+        //set default USER INFO
+        name.setText(Common.currentUser.getName());
+        course.setText(Common.currentUser.getCourse());
+        sem.setText(Common.currentUser.getSem());
+        //campus.setText(Common.currentUser.getCampus());
+        gender.setText(Common.currentUser.getGen());
+        phoneno.setText(Common.currentUser.getPhoneNo());
 
         btnSubmit = (Button)findViewById(R.id.btnSubmit);
 
@@ -60,22 +65,37 @@ public class RequestTutor extends AppCompatActivity{
                 req.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("user_data",0);
+                        //Toast.makeText(RequestTutor.this, sharedPreferences.getString("stud_id",""),Toast.LENGTH_SHORT).show();
+
                         //check if user already exist
-                        if(dataSnapshot.child(tutor_stuid.getText().toString()).exists()){
+                        if(dataSnapshot.child( sharedPreferences.getString("stud_id","")).exists()){
                             mDialog.dismiss();
-                            Toast.makeText(RequestTutor.this, "Student ID already requested",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RequestTutor.this, "Request Unsuccessful\nYou have already requested",Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                         else{
                             mDialog.dismiss();
 
                             Tutor_Request reqTutor = new Tutor_Request(
-                                    tutor_stuid.getText().toString(),
-                                    tutor_courseTeach.getText().toString(),
-                                    tutor_CourseGrade.getText().toString(),
-                                    tutor_name.getText().toString(),
-                                    tutor_SemTaken.getText().toString());
 
-                            req.child(tutor_stuid.getText().toString()).setValue(reqTutor);
+                                    course.getText().toString(),
+                                    courseTeach.getText().toString(),
+                                    name.getText().toString(),
+                                    sem.getText().toString(),
+                                    sharedPreferences.getString("stud_id",""),
+                                    sharedPreferences.getString("stud_id",""),
+                                    gender.getText().toString(),
+                                    price.getText().toString(),
+                                    campus.getText().toString(),
+                                    phoneno.getText().toString(),
+                                    coursename.getText().toString(),
+                                    courseGrade.getText().toString()
+                            );
+                                    //12
+
+                            req.child(sharedPreferences.getString("stud_id","")).setValue(reqTutor);
                             Toast.makeText(RequestTutor.this, "Request has been submit!",Toast.LENGTH_SHORT).show();
 
                             //To Home page
@@ -85,6 +105,7 @@ public class RequestTutor extends AppCompatActivity{
                             finish();
 
                         }
+                        finish();
                     }
 
                     @Override

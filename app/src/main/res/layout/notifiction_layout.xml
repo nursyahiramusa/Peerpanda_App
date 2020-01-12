@@ -14,6 +14,7 @@
     android:layout_marginTop="5dp"
     card_view:cardCornerRadius="10dp"
     card_view:cardBackgroundColor="@color/white"
+    tools:context=".Notification"
     >
 
     <RelativeLayout
@@ -35,12 +36,12 @@
 
 
         <TextView
+            android:id="@+id/coursecode"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"
-            android:id="@+id/courseTeach"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:text="Course Teach "
+            android:text="Course Code "
             android:textColor="@color/black"
             android:textSize="16sp"
             android:maxLines="1"
@@ -48,18 +49,30 @@
             android:textStyle="bold"
             />
 
-
         <TextView
-            android:id="@+id/tutor_name"
+            android:id="@+id/StuID"
             android:layout_marginLeft="8dp"
             android:layout_width="match_parent"
             android:layout_height="18sp"
-            android:text="Name of Tutor"
+            android:text="Student ID"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:maxLines="1"
             android:layout_toRightOf="@id/tutor_image"
-            android:layout_below="@+id/courseTeach"
+            android:layout_below="@+id/coursecode"
+            />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:text="Status"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_toRightOf="@id/tutor_image"
+            android:layout_below="@+id/StuID"
             />
         <TextView
             android:id="@+id/datetime"
@@ -71,7 +84,7 @@
             android:textSize="14sp"
             android:maxLines="1"
             android:layout_toRightOf="@id/tutor_image"
-            android:layout_below="@+id/tutor_name"
+            android:layout_below="@+id/status"
             />
         <TextView
             android:id="@+id/location"
@@ -85,17 +98,29 @@
             android:layout_toRightOf="@id/tutor_image"
             android:layout_below="@+id/datetime"
             />
+        <TextView
+            android:id="@+id/total_pay"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:text="Total Pay"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_toRightOf="@id/tutor_image"
+            android:layout_below="@+id/location"
+            />
         <Button
             android:id="@+id/btnCancel"
-            android:layout_width="100dp"
+            android:layout_width="95dp"
             android:layout_height="10dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/button_rectangle_yello"
             android:text="Cancel"
-            android:layout_margin="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_below="@+id/location"/>
     </RelativeLayout>
 

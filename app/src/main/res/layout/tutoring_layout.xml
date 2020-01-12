@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="5dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardBackgroundColor="@color/whiteTextColor"
+    android:clickable="true"
+    >
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16sp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/booking_id"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:text="STUDENT ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/booking_status"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/booking_phone"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="0192101010"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/coursecode"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="Course code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tutor_name"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="Tutor Name (belom)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/datetime"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="date time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/location"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/total_pay"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:text="Total Pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/btnAccept"
+                    android:layout_width="130dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/button_rectangle_blue"
+                    android:text="Accept Booking"
+                    android:textSize="13sp"
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/btnCompleted"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/button_rectangle_yello"
+                    android:text="Completed"
+                    android:textSize="13sp"
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/btnAccept"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

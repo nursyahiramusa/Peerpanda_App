@@ -64,7 +64,7 @@
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
                         app:layout_collapseMode="parallax"
-                        android:src="@drawable/hanbin"
+                        android:src="@drawable/img_user"
                         />
 
                     <LinearLayout
@@ -75,35 +75,38 @@
                         android:layout_gravity="center">
                         <TextView
                             android:id="@+id/tutor_name"
-                            android:text="Kim Han Bin"
+                            android:text="Name"
                             android:textColor="@color/greytext"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             />
                         <TextView
                             android:id="@+id/tutor_stuid"
                             android:text="2017171717"
-                            android:textColor="@color/greytext"
+                            android:textColor="@color/white"
                             android:textSize="1dp"
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             />
                         <RelativeLayout
                             style="@style/profileDetailsLayout2">
 
                             <TextView
                                 android:id="@+id/tv_sem"
+                                style="@style/tutorDetailsMiniText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
                                 android:layout_marginLeft="1dp"
+                                android:background="@color/white"
+                                android:maxLines="1"
                                 android:text="Semester"
                                 android:textColor="@color/greytext"
-                                android:maxLines="1"
-                                android:textSize="14sp"
-                                android:layout_height="20dp"
-                                android:layout_width="wrap_content"
-                                style="@style/tutorDetailsMiniText" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tutor_sem"
@@ -114,7 +117,8 @@
                                 android:layout_toRightOf="@id/tv_sem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
-                                android:maxLines="1"/>
+                                android:maxLines="1"
+                                android:background="@color/white"/>
                         </RelativeLayout>
                         <RelativeLayout
                             style="@style/profileDetailsLayout2">
@@ -123,18 +127,20 @@
                                 android:id="@+id/iv_gen"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@drawable/gender" />
+                                android:src="@drawable/gender"
+                                android:background="@color/white"/>
 
                             <TextView
                                 android:id="@+id/tutor_gender"
                                 android:layout_marginLeft="5dp"
-                                android:text="Male"
+                                android:text="Gender"
                                 android:textSize="14sp"
                                 android:layout_toRightOf="@id/iv_gen"
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
                                 android:textColor="@color/greytext"
-                                android:maxLines="1"/>
+                                android:maxLines="1"
+                                android:background="@color/white"/>
                         </RelativeLayout>
                         <RelativeLayout
                             style="@style/profileDetailsLayout2">
@@ -148,17 +154,19 @@
                                 android:layout_height="20dp"
                                 android:layout_width="wrap_content"
                                 android:textColor="@color/greytext"
-                                style="@style/tutorDetailsMiniText" />
+                                style="@style/tutorDetailsMiniText"
+                                android:background="@color/white"/>
 
                             <TextView
                                 android:id="@+id/tutor_prog_name"
                                 android:layout_marginLeft="5dp"
-                                android:text="Bachelor in Science Computer (Hons) Netcentric"
+                                android:text=""
                                 android:textSize="14sp"
                                 android:layout_toRightOf="@id/tutor_programme"
                                 android:layout_width="match_parent"
                                 android:layout_height="33dp"
-                                android:maxLines="2"/>
+                                android:maxLines="2"
+                                android:background="@color/white"/>
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -230,7 +238,7 @@
                                         android:layout_height="wrap_content"
                                         android:textSize="11sp"
                                         android:layout_marginTop="-17dp"
-                                        android:text="10"
+                                        android:text="3"
                                         android:layout_gravity="left"
                                         android:gravity="left"
                                         android:layout_marginLeft="53dp"/>
@@ -398,24 +406,25 @@
                             android:layout_gravity="bottom">
 
                             <LinearLayout
-                                android:orientation="vertical"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="5dp"
-                                android:layout_margin="1dp">
+                                android:layout_margin="1dp"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
                                 <TextView
                                     android:id="@+id/tv_30second"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerVertical="true"
-                                    android:layout_margin="1dp"
                                     android:layout_gravity="center"
+                                    android:layout_margin="1dp"
                                     android:text="Book Now!"
-                                    android:textSize="17sp"
-                                    android:textColor="@color/greytext"/>
-                                <View
-                                    style="@style/proifleDetailsView" />
-                                <EditText
+                                    android:textColor="@color/greytext"
+                                    android:textSize="17sp" />
+
+                                <View style="@style/proifleDetailsView" />
+                                <!--EditText
                                     android:id="@+id/phoneno"
                                     android:layout_width="260dp"
                                     android:layout_height="30dp"
@@ -428,46 +437,57 @@
                                     android:textSize="14sp"
                                     android:inputType="number"
                                     android:drawableLeft="@drawable/ic_iphone"
-                                    android:text="0197664736"
-                                    />
+                                    android:text=""
+                                    /-->
                                 <EditText
                                     android:id="@+id/datetime"
                                     android:layout_width="260dp"
                                     android:layout_height="30dp"
                                     android:layout_centerVertical="true"
-                                    android:layout_margin="10dp"
                                     android:layout_gravity="center"
+                                    android:layout_margin="10dp"
                                     android:background="@drawable/button_white_stroke"
                                     android:drawableLeft="@drawable/ic_calendar"
                                     android:hint="  Select Date and Time"
-                                    android:textColor="@color/greytext"
-                                    android:textSize="14sp"
                                     android:inputType="date"
-                                    android:text="23/10/2019 -17:15"
-                                    />
+                                    android:keyboardNavigationCluster="false"
+                                    android:textColor="@color/greytext"
+                                    android:textSize="14sp" />
 
                                 <EditText
                                     android:id="@+id/location"
                                     android:layout_width="260dp"
                                     android:layout_height="30dp"
+                                    android:layout_gravity="center"
                                     android:layout_centerVertical="true"
                                     android:layout_margin="1dp"
-                                    android:layout_gravity="center"
                                     android:background="@drawable/button_white_stroke"
-                                    android:hint="  Location"
-                                    android:textColor="@color/greytext"
-                                    android:textSize="14sp"
-                                    android:inputType="textCapWords"
                                     android:drawableLeft="@drawable/ic_loc"
-                                    android:text="Bilik 24 Jam"
-                                    />
+                                    android:hint="  Location"
+                                    android:inputType="textCapWords"
+                                    android:text=""
+                                    android:textColor="@color/greytext"
+                                    android:textSize="14sp"/>
+
+                                <ImageButton
+                                    android:id="@+id/btnLoc"
+                                    android:padding="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@+id/location"
+                                    android:layout_alignBottom="@+id/location"
+                                    android:layout_alignRight="@+id/location"
+                                    android:src="@drawable/ic_loc"
+                                    android:outlineSpotShadowColor="@color/yello"
+                                    android:layout_gravity="center"
+                                    android:background="@color/white"/>
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
                                     android:layout_marginTop="14dp"
-                                    android:gravity="center"
-                                    android:layout_gravity="center">
+                                    android:gravity="center">
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -487,6 +507,7 @@
                                         android:textStyle="bold" />
 
                                 </LinearLayout>
+
                                 <Button
                                     android:id="@+id/btnBookNow"
                                     android:layout_width="110dp"
@@ -494,11 +515,11 @@
                                     android:layout_alignParentEnd="true"
                                     android:layout_alignParentBottom="true"
                                     android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
                                     android:layout_margin="10dp"
                                     android:background="@drawable/button_rectangle_yello"
                                     android:text="Book Now"
-                                    android:textColor="@color/greytext"
-                                    android:layout_gravity="center"/>
+                                    android:textColor="@color/greytext" />
 
 
                             </LinearLayout>

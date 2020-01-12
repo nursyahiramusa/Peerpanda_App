@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tool_bar"
+    app:menu="@menu/tool_bar">
+
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        android:title="Search..."
+        app:showAsAction="always"
+        android:icon="@drawable/search"/>
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="Sort"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_loc"
+        android:title="Location"
+        app:showAsAction="never"/>
+</menu>

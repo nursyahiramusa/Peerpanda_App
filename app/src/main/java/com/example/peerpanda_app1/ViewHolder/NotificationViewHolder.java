@@ -7,20 +7,22 @@ import com.example.peerpanda_app1.R;
 
 public class NotificationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView tutor_name;
+    public TextView status;
     public TextView coursecode;
     public TextView datetime;
     public TextView location;
+    public TextView totalpay;
 
     private OnItemClickListener itemClickListener;
 
     public NotificationViewHolder(View itemView){
         super(itemView);
 
-        tutor_name = (TextView)itemView.findViewById(R.id.tutor_name);
+        status = (TextView)itemView.findViewById(R.id.status);
         coursecode = (TextView)itemView.findViewById(R.id.course_code);
         datetime = (TextView)itemView.findViewById(R.id.datetime);
         location = (TextView)itemView.findViewById(R.id.location);
+        totalpay = (TextView)itemView.findViewById(R.id.total_pay);
 
         itemView.setOnClickListener(this);
     }

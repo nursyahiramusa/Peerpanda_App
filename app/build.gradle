@@ -17,6 +17,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
     dataBinding {
         enabled = true
     }
@@ -36,13 +38,14 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.navigation:navigation-fragment:2.1.0'
     implementation 'androidx.navigation:navigation-ui:2.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //Firebase database
     //implementation 'com.google.firebase:firebase-core:10.2.0'
-    //implementation 'com.google.firebase:firebase-database:10.2.0'
+    //implementation 'com.google.firebase:firebase-database:10.2.0
     implementation 'com.google.firebase:firebase-database:19.1.0'
 
     //button and edit text
@@ -87,10 +90,16 @@ dependencies {
 
     //search bar
     implementation 'com.github.mancj:MaterialSearchBar:0.7.1'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
 
     //rating
     implementation 'com.stepstone.apprating:app-rating:2.3.1'
 
     implementation 'com.google.firebase:firebase-auth:9.8.0'
+
+    implementation 'com.karumi:dexter:6.0.1'
+
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

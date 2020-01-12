@@ -12,12 +12,26 @@ public class Booking {
     private String coursecode;
     private String StuID;
     private String tutorID;
+    private  String tutor_name;
+
 
     public Booking() {
     }
 
-    public Booking(String bookID, String datetime, String location, String status, String total_pay, String coursecode, String stuID, String tutorID) {
+    /*public Booking(String bookID, String datetime, String location, String status, String total_pay, String coursecode, String stuID, String tutorID) {
         this.bookID = bookID;
+        this.datetime = datetime;
+        this.location = location;
+        this.status = "0";
+        this.total_pay = total_pay;
+        this.coursecode = coursecode;
+        StuID = stuID;
+        this.tutorID = tutorID;
+        this.status = "0";
+    }*/
+    public Booking(String phoneno, String datetime, String location, String status,
+                   String total_pay, String coursecode, String stuID, String tutorID, String tutor_name) {
+        this.phoneno = phoneno;
         this.datetime = datetime;
         this.location = location;
         this.status = status;
@@ -25,17 +39,21 @@ public class Booking {
         this.coursecode = coursecode;
         StuID = stuID;
         this.tutorID = tutorID;
+        this.tutor_name = tutor_name;
     }
 
-    public Booking(String phoneno, String datetime, String location, String total_pay, String coursecode, String stuID, String tutorID) {
+    public Booking(String phoneno, String datetime, String location,String status, String total_pay, String coursecode, String stuID, String tutorID) {
         this.phoneno = phoneno;
         this.datetime = datetime;
         this.location = location;
+        this.status = "0";
         this.total_pay = total_pay;
         this.coursecode = coursecode;
         StuID = stuID;
         this.tutorID = tutorID;
+
     }
+
 
     public Booking(String datetime, String location, String total_pay, String coursecode, String tutorID) {
         this.datetime = datetime;
@@ -43,6 +61,22 @@ public class Booking {
         this.total_pay = total_pay;
         this.coursecode = coursecode;
         this.tutorID = tutorID;
+    }
+
+    public String getTutor_name() {
+        return tutor_name;
+    }
+
+    public void setTutor_name(String tutor_name) {
+        this.tutor_name = tutor_name;
+    }
+
+    public String getPhoneno() {
+        return phoneno;
+    }
+
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
     }
 
     public String getBookID() {
@@ -108,4 +142,6 @@ public class Booking {
     public void setTutorID(String tutorID) {
         this.tutorID = tutorID;
     }
+
+
 }

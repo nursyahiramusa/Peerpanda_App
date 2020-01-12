@@ -21,7 +21,7 @@ import com.example.peerpanda_app1.Model.Booking;
 import java.util.Calendar;
 
 public class BookingDetail extends FragmentActivity {
-    public static EditText DateEdit;
+    public static EditText DateEdit, Location;
     Button btnsubmit;
 
     @Override
@@ -36,7 +36,7 @@ public class BookingDetail extends FragmentActivity {
                 showDatePickerDialog(v);
             }
         });
-
+        Location = (EditText)findViewById(R.id.location);
         btnsubmit = (Button)findViewById(R.id.btnSubmit);
         btnsubmit.setOnClickListener(new View.OnClickListener(){
             @Override

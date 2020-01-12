@@ -9,20 +9,20 @@ public class User {
     private String Gen;
     private String CPass;
     private String PhoneNo;
-
+    private String isStaff;
     public User() {
     }
 
-    public User(String stuID, String pass, String name, String course, String sem, String CPass) {
+    public User(String stuID, String pass, String name, String course, String sem, String gen, String phoneNo) {
         StuID = stuID;
         Pass = pass;
         Name = name;
         Course = course;
         Sem = sem;
-        this.CPass = CPass;
+        Gen = gen;
+        PhoneNo = phoneNo;
+        isStaff = "false";
     }
-
-
 
     public String getStuID() {
         return StuID;
@@ -86,6 +86,14 @@ public class User {
 
     public void setPhoneNo(String phoneNo) {
         PhoneNo = phoneNo;
+    }
+
+    public String getIsStaff() {
+        return isStaff;
+    }
+
+    public void setIsStaff(String isStaff) {
+        this.isStaff = isStaff;
     }
 
     @Override

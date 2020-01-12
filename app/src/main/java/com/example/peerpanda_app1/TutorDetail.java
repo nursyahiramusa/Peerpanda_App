@@ -9,7 +9,9 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.RatingBar;
@@ -48,12 +51,14 @@ import java.util.Calendar;
 public class TutorDetail extends AppCompatActivity implements RatingDialogListener {
 
     TextView tutor_name, tutor_price, tutor_sem, tutor_programme, tutor_gender, course_code, course_name, total_pay, ratecount;
-    TextView bookID, datetime, location, status , coursecode, stuID, tutorID, phoneno;
+    TextView bookID, datetime, location , coursecode, stuID, tutorID, phoneno,ratingValue;
     ImageView tutor_image;
+    ImageButton btnLoc;
     FloatingActionButton btnRating;
     Button btnBookNow;
     RatingBar ratingBar;
     String tutorId="";
+    String status = "0";
 
     FirebaseDatabase database;
     DatabaseReference tutors;
@@ -62,6 +67,8 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
 
     Tutor currentTutor;
     User currentUser;
+
+
 
     public static EditText DateEdit;
 
@@ -91,19 +98,23 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
         total_pay = (TextView)findViewById(R.id.total_pay);
 
         datetime = (TextView)findViewById(R.id.datetime);
+        datetime.setInputType(0);
         location = (TextView)findViewById(R.id.location);
         total_pay = (TextView)findViewById(R.id.total_pay);
         coursecode = (TextView)findViewById(R.id.course_code);
         ratecount = findViewById(R.id.ratecount);
         stuID = (TextView)findViewById(R.id.edtStuID);
-        phoneno = findViewById(R.id.phoneno);
+        tutor_name = findViewById(R.id.tutor_name);
+        //phoneno = findViewById(R.id.phoneno);
 
         tutorID = (TextView)findViewById(R.id.tutor_stuid);
+
+        ratingValue = (TextView)findViewById(R.id.ratecount);
 
         //Get tutor id from Intent
         if(getIntent() !=null)
             tutorId = getIntent().getStringExtra("TutorId");
-        if(!tutorId.isEmpty()){
+        if(tutorId != null){
                 getDetailsTutor(tutorId);
                 getRatingTutor(tutorId);
         }
@@ -120,6 +131,16 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
 
         });
 
+        //ImageButton Location
+        btnLoc = (ImageButton)findViewById(R.id.btnLoc);
+        btnLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startLoc = new Intent(TutorDetail.this, MapsActivity.class);
+                startActivity(startLoc);
+            }
+        });
+
         //booking
         btnBookNow = (Button)findViewById(R.id.btnBookNow);
         btnBookNow.setOnClickListener(new View.OnClickListener(){
@@ -129,20 +150,26 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            Booking book = new Booking(phoneno.getText().toString(),
+                        SharedPreferences sharedPreferences = getSharedPreferences("user_data",0);
+                        SharedPreferences sharedPreferences2 = getSharedPreferences("user_data",0);
+                        Toast.makeText(TutorDetail.this, sharedPreferences.getString("stud_id",""),Toast.LENGTH_SHORT).show();
+                            Booking book = new Booking(
+                                    Common.currentUser.getPhoneNo(),
                                     datetime.getText().toString(),
                                     location.getText().toString(),
+                                    status,
                                     total_pay.getText().toString(),
                                     course_code.getText().toString(),
-                                    currentUser.getStuID(),
-                                    tutorID.getText().toString());
+                                    sharedPreferences.getString("stud_id",""),
+                                    tutorID.getText().toString(),
+                                    tutor_name.getText().toString()
+                            );
 
-                            bookingTbl.child(stuID.getText().toString()).setValue(book);
-                            Toast.makeText(TutorDetail.this, "Book successful!",Toast.LENGTH_SHORT).show();
-
-                            //To Home page
-                            Intent signIn = new Intent(TutorDetail.this, TutorDetail.class);
-                            startActivity(signIn);
+                            bookingTbl.child(sharedPreferences.getString("stud_id", "")).setValue(book);
+                            Toast.makeText(TutorDetail.this, "Booking submitted!",Toast.LENGTH_SHORT).show();
+                            finish();
+                            //Intent detail = new Intent(TutorDetail.this, TutorDetail.class);
+                            //startActivity(detail);
                             finish();
                         }
 
@@ -157,17 +184,19 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
         //date and time
         DateEdit = (EditText) findViewById(R.id.datetime);
         DateEdit.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 showTimePickerDialog(v);
                 showDatePickerDialog(v);
+
             }
         });
 
     }
 
     private void getRatingTutor(String tutorId) {
-        com.google.firebase.database.Query tutorRating = ratingTbl.orderByChild("tutorID").equalTo(tutorId);
+        com.google.firebase.database.Query tutorRating = ratingTbl.orderByChild("stuID").equalTo(tutorId);
 
         tutorRating.addValueEventListener(new ValueEventListener() {
             int count=0, sum=0;
@@ -177,12 +206,11 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
                     Rating item = postSnapshot.getValue(Rating.class);
                     sum+=Integer.parseInt(item.getRatingValue());
                     count++;
-
-
                 }
                 if(count != 0){
                     float average = sum/count;
                     ratingBar.setRating(average);
+                    ratingValue.setText(Float.toString(average));
                 }
 
             }
@@ -230,7 +258,9 @@ public class TutorDetail extends AppCompatActivity implements RatingDialogListen
                 currentTutor = dataSnapshot.getValue(Tutor.class);
 
                 //set image
-                Picasso.with(getBaseContext()).load(currentTutor.getTutorImage())
+                //Picasso.with(getBaseContext()).load(model.getTutorImage())
+                //        .into(viewHolder.tutor_image);
+                Picasso.with(getBaseContext()).load(R.drawable.noprofile)
                         .into(tutor_image);
 
                 tutor_name.setText(currentTutor.getName());

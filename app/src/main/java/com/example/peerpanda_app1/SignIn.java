@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SignIn extends AppCompatActivity {
     EditText edtStuID, edtPass;
     Button btnSignIn;
+
 
 
     @Override
@@ -45,6 +47,9 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View view){
 
+                final SharedPreferences sharedPreferences = getSharedPreferences("user_data",0);
+                final SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
                 mDialog.setMessage("Please wait...");
                 mDialog.show();
@@ -64,7 +69,9 @@ public class SignIn extends AppCompatActivity {
                             user.setStuID(edtStuID.getText().toString()); //set stuid
 
                             if (user.getPass().equals(edtPass.getText().toString())) {
-                                Toast.makeText(SignIn.this, "Sign in successfully !", Toast.LENGTH_SHORT).show();
+                                editor.putString("stud_id",edtStuID.getText().toString());
+                                editor.commit();
+                                Toast.makeText(SignIn.this, "Sign in successfully ! \n"+sharedPreferences.getString("stud_id",""), Toast.LENGTH_SHORT).show();
                                 //To Home page
                                 Intent Home = new Intent(SignIn.this, Home.class);
                                 startActivity(Home);

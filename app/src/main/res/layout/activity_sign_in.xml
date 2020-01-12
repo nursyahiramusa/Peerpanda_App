@@ -52,7 +52,7 @@
         app:met_maxCharacters="10"
         app:met_primaryColor="@android:color/black"
         app:met_singleLineEllipsis="true"
-        android:text="2017175569"/>
+        android:text="2018181818"/>
 
     <EditText
         android:id="@+id/edtPass"
@@ -61,7 +61,7 @@
         android:layout_above="@id/edtStuID"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="284dp"
@@ -78,6 +78,17 @@
         app:met_primaryColor="@android:color/black"
         app:met_singleLineEllipsis="true"
         android:text="1234"/>
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:id="@+id/result"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-100dp"
+        android:layout_gravity="center"
+        android:textSize="14sp"
+        android:layout_below="@+id/edtStuID"/>
 
     <LinearLayout
         android:layout_width="135dp"
@@ -100,6 +111,7 @@
             android:background="@drawable/button_rectangle_yello"
             android:text="Sign In" />
 
-    </LinearLayout>
 
+
+    </LinearLayout>
 </RelativeLayout>

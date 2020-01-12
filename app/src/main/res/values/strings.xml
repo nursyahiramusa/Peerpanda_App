@@ -1,4 +1,5 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
     <string name="app_name">Peerpanda_App1</string>
     <string name="slogan">UiTM Peer Tutor Application\nWe will help you find perfect tutor!</string>
     <string name="slogan2">UiTM Peer Tutor Application</string>
@@ -16,5 +17,13 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="gen_prompt">Choose your Gender</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string-array name="gen_array" android:alpha="0.8" android:textColor="@color/black" android:textSize="12sp">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
 </resources>

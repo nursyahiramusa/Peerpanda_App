@@ -8,26 +8,74 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Home"
     tools:showIn="@layout/app_bar_home">
-
-    <com.mancj.materialsearchbar.MaterialSearchBar
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.miguelcatalan.materialsearchview.MaterialSearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchbar"
+        android:id="@+id/searchla"
         android:gravity="center"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:layout_alignParentTop="true"
         app:mt_speechMode="false"
         app:mt_hint="Enter course Code to Search"
+        android:layout_marginTop="0dp"
         />
+    <!--LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="0dp"
+            android:text="List of All Our Panda"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/white"
+            >
+        </TextView>
+    </LinearLayout-->
+    <!--LinearLayout
+        android:id="@+id/middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/top">
+        <CheckBox
+            android:id="@+id/chkFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:padding="5dp"/>
+
+        <CheckBox
+            android:id="@+id/chkMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:padding="5dp"/>
+    </LinearLayout-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_menu"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/searchbar">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/searchla">
     </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

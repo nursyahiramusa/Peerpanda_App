@@ -3,15 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeNavActivity">
+    tools:context=".Home"
+    android:id="@+id/tool_bar"
+    app:menu="@menu/tool_bar">
 
     <item
         android:id="@+id/action_other"
         android:orderInCategory="300"
         android:title="Other"
         android:icon="@drawable/ic_other"
-        app:showAsAction="ifRoom">
-
+        app:showAsAction="ifRoom"
+        android:visible="true"
+        android:onClick="true">
     </item>
 
 </menu>
